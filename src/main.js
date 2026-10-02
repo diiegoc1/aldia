@@ -60,7 +60,7 @@ document.addEventListener('click', function (evento) {
     registrarPago(el.dataset.id, costo);
   }
 
-  if (accion === 'cear') {
+  if (accion === 'crear') {
     const datos = {
       tipo: document.getElementById('f-tipo').value,
       detalle: document.getElementById('f-detalle').value.trim(),
