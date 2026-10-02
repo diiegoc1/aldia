@@ -1,0 +1,14 @@
+{
+  "name": "AlDia — Vencimientos del vehículo",
+  "short_name": "AlDia",
+  "description": "Nunca más llegues tarde a la VTV, el seguro o la patente.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d0f14",
+  "theme_color": "#8b7cf6",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "./icono-192.png", "sizes": "70x64", "type": "image/png" },
+    { "src": "./icono-512.png", "sizes": "869x757", "type": "image/png" }
+  ]
+}

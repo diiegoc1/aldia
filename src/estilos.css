@@ -1,0 +1,123 @@
+/* index.html — el cuerpo completo:
+   <div id="app"></div>
+   <script type="module" src="/src/main.js"></script>
+*/
+:root {
+  --bg: #0d0f14;
+  --panel: #171a22;
+  --linea: #262a36;
+  --texto: #e9ecf5;
+  --apagado: #98a0b6;
+  --acento: #8b7cf6;
+  --vencido: #f87171;
+  --critico: #fb923c;
+  --proximo: #fbbf24;
+  --aldia: #34d399;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--texto);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.app { max-width: 620px; margin: 0 auto; padding: 18px 14px; }
+
+.cabecera { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.cabecera h1 { font-size: 1.2rem; }
+.cabecera .patente {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: var(--apagado);
+  border: 1px solid var(--linea);
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+
+.tarjeta {
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+/* ===== Semáforo ===== */
+.venc { border-left: 4px solid var(--linea); display: flex; gap: 13px; align-items: center; }
+.venc.vencido { border-left-color: var(--vencido); }
+.venc.critico { border-left-color: var(--critico); }
+.venc.proximo { border-left-color: var(--proximo); }
+.venc.aldia   { border-left-color: var(--aldia); }
+
+.venc .emoji { font-size: 1.7rem; }
+.venc .info { flex: 1; }
+.venc .info h3 { font-size: 0.95rem; }
+.venc .info .detalle { font-size: 0.75rem; color: var(--apagado); }
+.venc .cuando { font-size: 0.82rem; font-weight: 600; }
+
+.vencido .cuando { color: var(--vencido); }
+.critico .cuando { color: var(--critico); }
+.proximo .cuando { color: var(--proximo); }
+.aldia .cuando   { color: var(--aldia); }
+
+.venc .fecha { font-size: 0.72rem; color: var(--apagado); }
+
+.btn {
+  padding: 8px 15px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  font-weight: 600;
+  background: var(--acento);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn.fantasma { background: transparent; color: var(--apagado); border: 1px solid var(--linea); }
+.btn.chico { padding: 5px 11px; font-size: 0.75rem; }
+
+.chips { display: flex; gap: 7px; margin-bottom: 14px; flex-wrap: wrap; }
+.chip {
+  padding: 5px 13px;
+  font-size: 0.76rem;
+  font-family: inherit;
+  background: transparent;
+  color: var(--apagado);
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.chip.activo { background: var(--acento); border-color: var(--acento); color: #fff; }
+
+label { display: flex; flex-direction: column; gap: 5px; font-size: 0.78rem; color: var(--apagado); }
+
+input, select {
+  padding: 9px 11px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--texto);
+  background: var(--bg);
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+}
+
+.campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 11px; margin-bottom: 14px; }
+
+.barra-inferior {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background: var(--panel);
+  border-top: 1px solid var(--linea);
+}
+
+.vacio { text-align: center; color: var(--apagado); padding: 28px 10px; }
+.oculto { display: none; }
